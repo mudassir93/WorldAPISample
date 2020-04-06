@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorldAPISample.CountryInfoView"
+             Title="Country Info View">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Spacing="30">
+            <!-- Place new controls here -->
+            <Image x:Name="Flag" HorizontalOptions="Center"  VerticalOptions="Center" WidthRequest="150" HeightRequest="90" Aspect="AspectFill" />
+            <Label x:Name="CountryName"
+           HorizontalOptions="Center"
+           VerticalOptions="Center" FontSize="Large" />
+            <Label x:Name="CountryNameNative"
+           HorizontalOptions="Center"
+           VerticalOptions="Center" FontSize="Body" />
+            <Label x:Name="CountryDetail"
+           HorizontalOptions="Center"
+           VerticalOptions="Center" FontSize="Caption" />
+            <StackLayout Orientation="Horizontal" Margin="20" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+                <Button x:Name="PrevBtn" WidthRequest="150" Text="Previous" Clicked="PrevBtn_Clicked"  />
+                <Button x:Name="NextBtn" WidthRequest="150" Text="Next" Clicked="NextBtn_Clicked"  />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

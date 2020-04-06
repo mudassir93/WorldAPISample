@@ -4,24 +4,30 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WorldAPISample.MainPage">
+             x:Class="WorldAPISample.MainPage" Title="Moody.WorldInfo.Sample">
 
-    <StackLayout VerticalOptions="Center" Spacing="30">
-        <!-- Place new controls here -->
-        <Image x:Name="Flag" HorizontalOptions="Center"  VerticalOptions="Center" WidthRequest="150" HeightRequest="90" Aspect="AspectFill" />
-        <Label x:Name="CountryName"
-           HorizontalOptions="Center"
-           VerticalOptions="Center" FontSize="Header" />
-        <Label x:Name="CountryNameNative"
-           HorizontalOptions="Center"
-           VerticalOptions="Center" FontSize="Body" />
-        <Label x:Name="CountryDetail"
-           HorizontalOptions="Center"
-           VerticalOptions="Center" FontSize="Caption" />
-        <StackLayout Orientation="Horizontal" Margin="20" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
-            <Button x:Name="PrevBtn" WidthRequest="150" Text="Previous" Clicked="PrevBtn_Clicked"  />
-            <Button x:Name="NextBtn" WidthRequest="150" Text="Next" Clicked="NextBtn_Clicked"  />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Spacing="50">
+            <Image x:Name="Icon" WidthRequest="100" HeightRequest="100"  Aspect="AspectFit" Source="icon.png" />
+            <Label Text="World Info API Sample" FontSize="Medium" />
         </StackLayout>
-    </StackLayout>
-
+        
+        <StackLayout Orientation="Horizontal"  Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+            <Button x:Name="ShowInfo" WidthRequest="150" Text="Country Info" Clicked="ShowInfo_Clicked"  />
+            <Button x:Name="ShowList" WidthRequest="150" Text="Country List" Clicked="ShowList_Clicked"  />
+        </StackLayout>
+        <StackLayout VerticalOptions="End" Grid.Row="2" Padding="10">
+            <Label TextType="Html" >
+                <![CDATA[
+                    <strong>Package Name:</strong> Moody.WorldInfo<br /><strong>Package Version:</strong> 1.0.0<br /><strong>Description:</strong> Sample to use Moody.WorldInfo and populate information of more than 200 countries with built-in flag icons and other details.                
+                ]]>
+            </Label>
+        </StackLayout>
+    </Grid>
 </ContentPage>

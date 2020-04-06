@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorldAPISample.CountryListView"
+             Title="Countries List View">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchBar" Placeholder="Search here... (+92 or Pak or پاک)" TextChanged="SearchBar_TextChanged" SearchButtonPressed="SearchBar_SearchButtonPressed" />
+            <ListView BackgroundColor="White" x:Name="CountriesListView"  HasUnevenRows="True"  SeparatorVisibility="Default" SeparatorColor="Silver"  ItemSelected="CountriesListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HeightRequest="50">
+                                <Image HorizontalOptions="Start" VerticalOptions="Center" Source="{Binding Image}" Aspect="AspectFit" WidthRequest="50" Margin="10" />
+                                <StackLayout Spacing="5" Margin="70,0,0,0" VerticalOptions="Center">
+                                    <Label HorizontalOptions="Start" Margin="0,0,70,0" LineBreakMode="TailTruncation" VerticalOptions="Center" Text="{Binding NativeName}"    FontSize="Small" TextColor="Gray" FontAttributes="Bold" />
+                                    <Label HorizontalOptions="Start" Margin="0,0,70,0" LineBreakMode="TailTruncation"  VerticalOptions="Center" Text="{Binding Name}"  FontSize="Micro" TextColor="Black"  />
+                                </StackLayout>
+                                <Label HorizontalOptions="End" VerticalOptions="Center" Text="{Binding PhoneCode}" Margin="0,0,50,0"  FontSize="Small" FontAttributes="Bold" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Label />
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
