@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorldInfo.Core.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,7 +21,7 @@ namespace WorldAPISample
             var data = WorldInfo.Implementation.WorldInfo.Current.GetCountriesWithIcons();
 
             countries = data.Countries.OrderBy(x => x.Name).ToList();
-
+           
             max = countries.Count;
 
             ShowCountry();
